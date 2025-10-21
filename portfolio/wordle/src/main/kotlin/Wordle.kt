@@ -27,7 +27,20 @@ fun pickRandomWord(words: MutableList<String>): String {
     return selectedWord
 }
 
+//Prompt the User for input then return the guess once validated
 fun obtainGuess(attempt: Int): String {
     println("Attempt $attempt: ")
-    readln().uppercase()
+    var guess = readln().uppercase()
+    while (isValid(guess) == false) {                       //check guess is valid
+        println("Please enter a 5 letter word")     
+        println("Attempt $attempt: ")                       //reprompt if invalid
+        guess = readln().uppercase()
+    }
+    return guess
+}
+
+
+//Compare given guess with target word 
+fun evaluateGuess(guess: String, target: String): List<Int> {
+    
 }
