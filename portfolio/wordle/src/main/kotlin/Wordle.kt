@@ -1,5 +1,6 @@
 // Implement the six required functions here
-
+import java.io.File
+import kotlin.random.Random
 
 
 
@@ -22,7 +23,7 @@ fun readWordList(filename: String): MutableList<String> {
 
 //Choose a random word from given lsit then returns it
 fun pickRandomWord(words: MutableList<String>): String {
-    val rndint = Random.nextInt(0, words.size + 1)          //random int corresponding to a list entry
+    val rndint = Random.nextInt(words.size)          //random int corresponding to a list entry
     val selectedWord = words[rndint]                        //entry at selected int 
     words.remove(selectedWord)
     return selectedWord

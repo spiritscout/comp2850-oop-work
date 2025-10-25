@@ -6,7 +6,7 @@ import kotlin.random.Random
 fun main() {
     
     val filename = "data/words.txt"
-    val wordList: MutableList<String>
+    var wordList = mutableListOf<String>()
 
     try {
         wordList = readWordList(filename)
