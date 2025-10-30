@@ -46,11 +46,11 @@ fun obtainGuess(attempt: Int): String {
 
 //Compare given guess with target word 
 fun evaluateGuess(guess: String, target: String): List<Int> {
-    val guessArray = guess.toCharArray()
+    val guessArray = guess.toCharArray()                        //convert to arrays for indexing
     val targetArray = target.toCharArray()
     val compareList = mutableListOf<Int>()
     for (n in 0 .. 4) {
-        if (guessArray[n] == targetArray[n]) {
+        if (guessArray[n] == targetArray[n]) {                  //compare char by char
             compareList.add(1)
         }   else {
             compareList.add(0)
