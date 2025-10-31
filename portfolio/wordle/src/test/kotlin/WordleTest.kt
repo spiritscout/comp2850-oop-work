@@ -31,7 +31,7 @@ class WordleTest : StringSpec({
         words shouldBe mutableListOf<String>()
     }
 
-    "evaluate guess should compare guess string and target string, and character by character return 1 for a match, 0 for not, as a list of ints" {
+    "evaluateGuess should compare guess & target strings, and per char return 1 for match, 0 for not, as a Int list" {
         evaluateGuess("stare" , "crane") shouldBe listOf(0,0,1,0,1)
         evaluateGuess("stare" , "stare") shouldBe listOf(1,1,1,1,1)
         evaluateGuess("stare" , "cloud") shouldBe listOf(0,0,0,0,0)
