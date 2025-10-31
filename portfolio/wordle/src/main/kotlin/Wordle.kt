@@ -23,7 +23,7 @@ fun readWordList(filename: String): MutableList<String> {
 
 //Choose a random word from given lsit then returns it
 fun pickRandomWord(words: MutableList<String>): String {
-    val rndint = Random.nextInt(words.size)          //random int corresponding to a list entry
+    val rndint = Random.nextInt(words.size)                 //random int corresponding to a list entry
     val selectedWord = words[rndint]                        //entry at selected int 
     words.remove(selectedWord)
     return selectedWord
@@ -32,13 +32,13 @@ fun pickRandomWord(words: MutableList<String>): String {
 //Prompt the User for input then return the guess once validated
 fun obtainGuess(attempt: Int): String {
     println("Attempt $attempt: ")
-    val input = readlnOrNull()?.trim() ?: ""
+    var input = readlnOrNull()?.trim() ?: ""                //return empty string for null entry
     var guess = input.uppercase()
     while (isValid(guess) == false) {                       //check guess is valid
         println("Please enter a 5 letter word")     
         println("Attempt $attempt: ")                       //reprompt if invalid
-        val input = readlnOrNull()?.trim() ?: ""
-        var guess = input.uppercase()
+        input = readlnOrNull()?.trim() ?: ""
+        guess = input.uppercase()
     }
     return guess
 }

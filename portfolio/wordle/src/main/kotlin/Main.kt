@@ -12,7 +12,7 @@ fun main() {
     try {
         wordList = readWordList(filename)
     }
-    catch (error: IllegalArgumentExeption) {
+    catch (error: IllegalArgumentException) {
         println("Unable to read from file words.txt")
     }
     
